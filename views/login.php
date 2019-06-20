@@ -4,7 +4,6 @@
 
 <h1>welcome to login</h1>
 
-<p>login</p>
 
 <div>
     <form class="form-signin" method="post" action="post/postlogin.php">

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('../controllers/Conn.php');
 require_once('../controllers/Auth.php');
 
@@ -25,6 +25,7 @@ if (isset($_POST['submit'])) {
             header('Location: admin.php');
         }
     } else {
+
         echo 'Incorrect email and password';
     }
 }
