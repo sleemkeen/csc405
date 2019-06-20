@@ -6,7 +6,7 @@ class Conn
     private $dbname = 'csc';
     private $host = 'localhost';
     private $username = 'root';
-    private $pass = 'root';
+    private $pass = 'PASSWORD';
     public function connect()
     {
 

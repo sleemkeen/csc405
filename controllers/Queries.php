@@ -90,22 +90,21 @@ class Queries extends Conn
 $tt = new Queries();
 
 
-// print_r($tt->findAll('users'));
+print_r($tt->findAll('users'));
 
-// print_r($tt->findBy('users', 'id', 1));
+print_r($tt->findBy('users', 'id', 1));
 
-// print_r($tt->selectby(['name', 'id'], 'users', 'id', 1));
+print_r($tt->selectby(['name', 'id'], 'users', 'id', 1));
 
-// print_r($tt->selectall(['name', 'id'], 'users'));
+print_r($tt->selectall(['name', 'id'], 'users'));
 
-// print_r($tt->query('select * from users'));
+print_r($tt->query('select * from users'));
 
-// `print_r($tt->insert([
+// print_r($tt->insert([
 //     'name', 'email', 'password', 'role'
 // ], [
 //     'shola', 'abcs@gmail.com', 'jjjss', 'user'
 // ], 'users'));
-
 
 
 // print_r($tt->insert([
