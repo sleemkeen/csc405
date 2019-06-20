@@ -6,6 +6,7 @@ require_once('controllers/Conn.php');
 require_once('controllers/Queries.php');
 require_once('controllers/Router.php');
 require_once('controllers/Middleware.php');
+require_once('models/Users.php');
 
 $request = $_SERVER['REQUEST_URI'];
 $router = new Router($request);
@@ -20,11 +21,11 @@ $router->get('/portal', 'views/portal');
 
 
 
-
-
 //Register Middleware
 $regmiddleware = new Middleware($request, [
     '/portal',
 ]);
+
+
 
 print_r($regmiddleware->handle());
