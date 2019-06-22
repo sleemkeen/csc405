@@ -5,9 +5,9 @@ require '../PHPMailer/SMTP.php';
 
 $mail = new PHPMailer;
 
-$smtpUsername = 'akhmadharuna@gmail.com';
-$smtpPassword = 'Yabatech2014';
-$emailFrom = 'akhmadharuna@gmail.com';
+$smtpUsername = '';
+$smtpPassword = '';
+$emailFrom = '';
 $emailFromName = 'Csc project';
 $emailToName = 'you';
 $emailTo = $_GET['email'];
