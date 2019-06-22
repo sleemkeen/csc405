@@ -19,6 +19,11 @@ $router->get('/login', 'views/login');
 $router->get('/register', 'views/register');
 $router->get('/portal', 'views/portal');
 
+//api
+
+
+
+
 
 
 //Register Middleware

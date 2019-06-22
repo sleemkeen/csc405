@@ -1,5 +1,8 @@
 <?php
-class Middleware
+
+require_once('interface/MiddlewareRule.php');
+
+class Middleware implements MiddlewareRule
 {
 
     private $req;

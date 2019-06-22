@@ -14,10 +14,12 @@ class Queries extends Conn
     }
     public function findBy($table, $by, $val)
     {
-        $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $by . ' = ' . $val . '';
+        $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $by . ' = ' . $val . ' LIMIT 1';
+
+        // return $sql;
         $pdosql = $this->connect()->prepare($sql);
         $pdosql->execute();
-        $result = $pdosql->fetchAll();
+        $result = $pdosql->fetch();
         return $result;
     }
 

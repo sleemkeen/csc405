@@ -1,12 +1,7 @@
 <?php
 class Venues extends Queries
 {
-    private $id;
 
-    // public function __construct($id)
-    // {
-    //     $this->id = $id;
-    // }
 
     public function get()
     {
