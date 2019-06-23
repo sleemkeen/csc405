@@ -33,7 +33,7 @@ $router->get('/adminvenue', 'views/admin/adminvenue');
 
 //Register Middleware
 $regmiddleware = new Middleware($request, [
-    '/portal','/adminhome'
+    '/portal',
 ]);
 
 

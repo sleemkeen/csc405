@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
             header('Location: /portal');
         } else {
 
-            $_SESSION['admin_id'] = $user['id'];
+            $_SESSION['user_id'] = $user['id'];
             $_SESSION['logged_in'] = time();
             header('Location: /adminhome');
         }
