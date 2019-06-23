@@ -14,6 +14,8 @@ class Auth extends Conn
 
         $email = !empty($this->email) ? trim($this->email) : null;
         $passwordAttempt = !empty($this->password) ? trim($this->password) : null;
+
+
         $sql = "SELECT id, email, password FROM users WHERE email = :email";
         $stmt = $this->connect()->prepare($sql);
 

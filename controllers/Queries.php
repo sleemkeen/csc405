@@ -94,7 +94,7 @@ class Queries extends Conn
 // $tt = new Queries();
 
 
-// print_r($tt->findAll('users'));
+// print_r($tt->findAll('venues'));
 
 // print_r($tt->findBy('users', 'id', 1));
 
