@@ -1,24 +1,24 @@
 <?php
 
-class Conn{
+class Conn
+{
 
     private $dbname = 'school';
     private $host = 'localhost';
     private $username = 'root';
     private $pass = '';
-    public function connect(){
-       
+    public function connect()
+    {
 
-        try{
+
+        try {
 
             $conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->pass);
             return $conn;
+        } catch (PDOexception $e) {
 
-        }catch(PDOexception $e){
-
-            echo "Datebase error".$e->getMessage();
+            echo "Datebase error" . $e->getMessage();
             die();
-
-        } 
+        }
     }
 }

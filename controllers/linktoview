@@ -1,0 +1,12 @@
+<?php 
+$jj  =  new Users();
+foreach ($jj->get() as $key => $value) {
+    echo $value['name']
+        . '<br>';
+}
+
+
+
+print_r($jj->showById(1));
+
+?>
