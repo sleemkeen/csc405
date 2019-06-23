@@ -7,6 +7,24 @@
             <img src="assets/image/signin.svg" alt="" style="width: 100%;">
         </div>
         <div class="fless__2 ml-5">
+
+            <?php if (isset($_SESSION['error'])) {  ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_SESSION['error']; ?>
+                </div>
+
+                <?php unset($_SESSION['error']); ?>
+
+            <?php } ?>
+
+            <?php if (isset($_SESSION['success'])) {  ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $_SESSION['success']; ?>
+                </div>
+
+                <?php unset($_SESSION['success']); ?>
+
+            <?php } ?>
             <form class="form-signin" method="post" action="post/postlogin.php">
                 <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label for="inputEmail" class="">Email:</label>

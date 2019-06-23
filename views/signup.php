@@ -7,12 +7,12 @@
         </div>
         <div class="fless__2 ml-5">
 
-            <?php if (isset($_SESSION['message'])) {  ?>
-                <div class="alert alert-info" role="alert">
-                    <?php echo $_SESSION['message']; ?>
+            <?php if (isset($_SESSION['error'])) {  ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_SESSION['error']; ?>
                 </div>
 
-                <?php unset($_SESSION['message']); ?>
+                <?php unset($_SESSION['error']); ?>
 
             <?php } ?>
 

@@ -14,7 +14,7 @@ class Queries extends Conn
     }
     public function findBy($table, $by, $val)
     {
-        $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $by . ' = ' . $val . ' LIMIT 1';
+        $sql = 'SELECT * FROM ' . $table . ' WHERE ' . $by . ' = ' . '"' . $val . '"' . ' LIMIT 1';
 
         // return $sql;
         $pdosql = $this->connect()->prepare($sql);
@@ -41,7 +41,9 @@ class Queries extends Conn
 
         $picks = implode(',', $pick);
 
-        $sql = 'SELECT ' . $picks . ' FROM ' . $table . ' WHERE ' . $by . ' = ' . $val . '';
+        $sql = 'SELECT ' . $picks . ' FROM ' . $table . ' WHERE ' . $by . ' = ' . '"' . $val . '"' . '';
+
+        // return $sql;
 
         $pdosql = $this->connect()->prepare($sql);
         $pdosql->execute();
@@ -96,7 +98,7 @@ class Queries extends Conn
 
 // print_r($tt->findBy('users', 'id', 1));
 
-// print_r($tt->selectby(['name', 'id'], 'users', 'id', 1));
+// print_r($tt->selectby(['name', 'id'], 'users', 'email', 'akhmadharuna@gmail.com'));
 
 // print_r($tt->selectall(['name', 'id'], 'users'));
 
