@@ -16,12 +16,10 @@ $router->get('/login', 'views/login');
 
 //like that
 //create your routes like this
-$router->get('/register', 'views/register');
+$router->get('/register', 'views/signup');
 $router->get('/portal', 'views/portal');
 
 //api
-
-
 
 
 
