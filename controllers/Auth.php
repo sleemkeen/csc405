@@ -41,7 +41,7 @@ class Auth extends Conn
 
             //If $validPassword is TRUE, the login has been successful.
             if ($validPassword) {
-                return true;
+                return false;
                 exit;
             } else {
                 //$validPassword was FALSE. Passwords do not match.
