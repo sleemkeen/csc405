@@ -17,15 +17,16 @@ if (isset($_POST['submit'])) {
 
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['logged_in'] = time();
-            header('Location: home.php');
+            header('Location: /portal');
         } else {
 
             $_SESSION['admin_id'] = $user['id'];
             $_SESSION['logged_in'] = time();
-            header('Location: admin.php');
+            header('Location: /adminhome');
         }
     } else {
 
-        echo 'Incorrect email and password';
+            $_SESSION['error'] = "Incorrect email and password";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
