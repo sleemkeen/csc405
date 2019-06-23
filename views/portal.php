@@ -3,7 +3,7 @@
     <header class="admin__header">
         <h1 class="logo dashcol">Dashboard</h1>
         <div class="toolbar">
-            <a href="#" class="logout">
+            <a href="login" class="logout">
                 Log Out
             </a>
         </div>

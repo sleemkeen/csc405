@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg navbar-light navbarcol">
 
         <img src="assets/image/Group.png" alt="sitelogo">
-        <a href="/">
+        <a href="/" style="text-decoration:none;">
             <h3 class="myclass">Mytutorial class</h3>
         </a>
 
@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="" href="/">Home</a>
+                    <a class="" href="/" style="color:#fff; text-decoration:none;">Home</a>
                 </li>
             </ul>
         </div>

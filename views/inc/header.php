@@ -15,7 +15,7 @@
     <nav class="navbar navbar-expand-lg navbar-light navbarcol">
         <img src="assets/image/Group.png" alt="sitelogo">
 
-        <a href="/">
+        <a href="/" style="text-decoration:none;">
             <h3 class="myclass">Mytutorial class</h3>
         </a>
 
