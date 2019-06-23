@@ -1,52 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard1</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/main2.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light navbarcol">
-            <img src="assets/image/Group.png" alt="sitelogo"><h3 class="myclass">Mytutorial class</h3>
-
-            <form class="form-inline form-search my-2 my-lg-0">
-            <div class="input-group">
-                <input type="text" class="form-control search-box" placeholder="Search..." aria-label="Search for...">
-                <span class="input-group-btn">
-                <button class="btn search-btn" type="button">Search</button>
-                </span>
-            </div>
-            </form>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="#">Course Category</a>
-                </li>
-            </ul>
-            </div>
-    </nav>
-
-    <div class="admin">
-        <header class="admin__header">
-            <h1 class="logo dashcol">Dashboard</h1>
-            <div class="toolbar">
+<?php include('inc/adminheader.php'); ?>
+<div class="admin">
+    <header class="admin__header">
+        <h1 class="logo dashcol">Dashboard</h1>
+        <div class="toolbar">
             <a href="#" class="logout">
                 Log Out
             </a>
-            </div>
-        </header>
-        <nav class="admin__nav navcol">
-            <!-- <ul class="menu">
+        </div>
+    </header>
+    <nav class="admin__nav navcol">
+        <!-- <ul class="menu">
                 <li class="menu__item">
                     <a class="menu__link" href="#">Course Registration</a>
                 </li>
@@ -57,13 +20,13 @@
                     <a class="menu__link" href="#">Time Table</a>
                 </li>
             </ul> -->
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link menu__link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Classes</a>
-                <a class="nav-link menu__link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Course Registration</a>
-                <a class="nav-link menu__link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Time Table</a>
-            </div>
-        </nav>
-        <main class="admin__main">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link menu__link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Classes</a>
+            <a class="nav-link menu__link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Course Registration</a>
+            <a class="nav-link menu__link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Time Table</a>
+        </div>
+    </nav>
+    <main class="admin__main">
         <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
@@ -169,7 +132,7 @@
                             </tr>
                         </tbody>
                     </table>
-                   <button type="submit" style="background-color:  #032658; color: #fff;">Submit</button>
+                    <button type="submit" style="background-color:  #032658; color: #fff;">Submit</button>
                 </div>
 
             </div>
@@ -390,15 +353,16 @@
             </div>
         </div>
 
-            
-            
-        </main>
-    </div>
 
-    
-        
+
+    </main>
+</div>
+
+
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </html>
