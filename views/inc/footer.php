@@ -13,7 +13,7 @@
                         <h5>Quick Links</h5>
                         <ul>
                             <li>
-                                <a href="#!">Link 1</a>
+                                <a href="adminlogin">Admin Panel</a>
                             </li>
                             <li>
                                 <a href="#!">Link 2</a>
