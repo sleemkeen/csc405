@@ -3,10 +3,10 @@
 class Conn
 {
 
-    private $dbname = 'csc';
+    private $dbname = 'school';
     private $host = 'localhost';
     private $username = 'root';
-    private $pass = 'PASSWORD';
+    private $pass = '';
     public function connect()
     {
         try {
