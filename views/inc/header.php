@@ -41,7 +41,7 @@
                     <a class="nav-link" href="register">SignUp</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="adminlogin">myAdmin</a>
                 </li>
             </ul>
         </div>
