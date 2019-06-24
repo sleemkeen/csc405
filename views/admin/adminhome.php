@@ -1,9 +1,10 @@
 <?php include('headadmin.php'); ?>
+<?php $init  =  new Classes(); ?>
 <div class="admin">
     <header class="admin__header">
         <h1 class="logo dashcol">MyTutorial Admin</h1>
         <div class="toolbar">
-            <a href="login" class="logout" style="text-decoration:none;">
+            <a href="logout" class="logout" style="text-decoration:none;">
                 Log Out
             </a>
         </div>
@@ -26,104 +27,47 @@
     </nav>
     <main class="admin__main">
 
-    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
-        <!-- Classes -->
-        <div class="alert alert-secondary" role="alert">
-            Welcome Admin,
-        </div>
-        <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
-            <div class="course_reg pt-3 pl-2">Timetable</div>
-            <hr>
+            <!-- Classes -->
+            <div class="alert alert-secondary" role="alert">
+                Welcome Admin,
+            </div>
+            <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
+                <div class="course_reg pt-3 pl-2">Timetable</div>
+                <hr>
 
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Course Title</th>
-                        <th scope="col">Course Code</th>
-                        <th scope="col">Date Registered</th>
-                        <th scope="col">Venue</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">7</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">8</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">10</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@mdo</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- <button type="submit" style="background-color:  #032658; color: #fff;">Submit</button> -->
-        </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Course Title</th>
+                            <th scope="col">Course Code</th>
+                            <th scope="col">Max Number</th>
+                            <th scope="col">Venue</th>
 
-        <!-- <div class="tab-content" id="v-pills-tabContent">
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $i = 1; ?>
+
+
+                        <?php foreach ($init->getWithVenue() as $value) { ?>
+                            <tr>
+                                <th scope="row"><?php echo $i++ ?></th>
+                                <td><?php echo $value['classTitle'] ?></td>
+                                <td><?php echo $value['classCode'] ?></td>
+                                <td><?php echo $value['classMax'] ?></td>
+                                <td><?php echo $value['venue'] ?></td>
+                            </tr>
+                        <?php } ?>
+
+                    </tbody>
+                </table>
+                <!-- <button type="submit" style="background-color:  #032658; color: #fff;">Submit</button> -->
+            </div>
+
+            <!-- <div class="tab-content" id="v-pills-tabContent">
             
             <div class="tab-pane fade active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                 <div class="alert alert-secondary" role="alert">
@@ -346,5 +290,3 @@
 
 
 </html>
-
-

@@ -1,6 +1,5 @@
 <?php
 
-
 class Queries extends Conn
 {
 
@@ -58,11 +57,8 @@ class Queries extends Conn
 
         $pdoStatement = $this->connect()->prepare($sql);
         $status = $pdoStatement->execute();
-        if ($status) {
-            return true;
-        } else {
-            return false;
-        }
+        $result = $pdoStatement->fetchAll();
+        return $result;
     }
 
     public function insert($attrArray = [], $valueArray = [], $table)
@@ -83,6 +79,8 @@ class Queries extends Conn
         $pdoStatement = $this->connect()->prepare($stringinsert);
         $status = $pdoStatement->execute();
 
+        return $stringinsert;
+
         if ($status) {
             return true;
         } else {
@@ -92,7 +90,7 @@ class Queries extends Conn
 }
 
 
-// $tt = new Queries();
+$tt = new Queries();
 
 
 // print_r($tt->findAll('venues'));
@@ -110,6 +108,14 @@ class Queries extends Conn
 // ], [
 //     'shola', 'abllcs@gmail.com', 'jjjss', 'user'
 // ], 'users'));
+
+
+// print_r($tt->insert([
+//     'classDate', 'classMax', 'classVenueId'
+// ], [
+//     '12/01/2019', 30, 3
+
+// ], 'classes'));
 
 
 // print_r($tt->insert([

@@ -9,19 +9,23 @@ class Venues extends Queries
         return $venues;
     }
 
+
+
     public function showById($id)
     {
         $venues = $this->findBy('venues', 'id', $id);
         return $venues;
     }
 
-    public function create()
+    public function create($venue)
     {
         //method to create
         $create = $this->insert([
             'venue',
         ], [
-            'lt018',
+            $venue,
         ], 'venues');
+
+        return $create;
     }
 }

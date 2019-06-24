@@ -3,7 +3,7 @@
     <header class="admin__header">
         <h1 class="logo dashcol">MyTutorial Admin</h1>
         <div class="toolbar">
-            <a href="login" class="logout" style="text-decoration:none;">
+            <a href="logout" class="logout" style="text-decoration:none;">
                 Log Out
             </a>
         </div>
@@ -26,20 +26,41 @@
     </nav>
     <main class="admin__main">
 
-    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-        <div class="alert alert-secondary" role="alert">
-            Welcome Admin,
-        </div>
-        <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
-            <div class="course_reg pt-3 pl-2">Add Venue</div>
-            <hr>
-            <label for="coursevenue" class="">Venue</label>
-            <input type="text" name="ven" id="coursevenue" class="form-control" style="width:50%;" required> <br>
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <div class="alert alert-secondary" role="alert">
+                Welcome Admin,
+            </div>
+            <?php if (isset($_SESSION['error'])) {  ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_SESSION['error']; ?>
+                </div>
 
-            <button type="submit" style="background-color:  #032658; color: #fff;">Submit</button>
-        </div>
+                <?php unset($_SESSION['error']); ?>
 
-        <!-- <div class="tab-content" id="v-pills-tabContent">
+            <?php } ?>
+
+            <?php if (isset($_SESSION['success'])) {  ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $_SESSION['success']; ?>
+                </div>
+
+                <?php unset($_SESSION['success']); ?>
+
+            <?php } ?>
+            <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
+                <form action="post/postvenue.php" method="post">
+
+                    <div class="course_reg pt-3 pl-2">Add Venue</div>
+                    <hr>
+                    <label for="coursevenue" class="">Venue</label>
+                    <input type="text" name="ven" id="coursevenue" class="form-control" style="width:50%;" required>
+                    <br>
+
+                    <input type="submit" name="submit" style="background-color:  #032658; color: #fff;" value="Submit" />
+                </form>
+            </div>
+
+            <!-- <div class="tab-content" id="v-pills-tabContent">
             
             <div class="tab-pane fade active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                 <div class="alert alert-secondary" role="alert">
@@ -261,6 +282,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>
-
-
-

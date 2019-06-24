@@ -1,9 +1,10 @@
 <?php include('headadmin.php'); ?>
+<?php $init  =  new Venues(); ?>
 <div class="admin">
     <header class="admin__header">
         <h1 class="logo dashcol">MyTutorial Admin</h1>
         <div class="toolbar">
-            <a href="login" class="logout" style="text-decoration:none;">
+            <a href="logout" class="logout" style="text-decoration:none;">
                 Log Out
             </a>
         </div>
@@ -26,31 +27,60 @@
     </nav>
     <main class="admin__main">
 
-    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
-        <!-- Classes -->
-        <div class="alert alert-secondary" role="alert">
-            Welcome Admin,
-        </div>
-        <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
-            <div class="course_reg pt-3 pl-2">Add Courses</div>
-            <hr>
+            <!-- Classes -->
+            <div class="alert alert-secondary" role="alert">
+                Welcome Admin,
+            </div>
+            <?php if (isset($_SESSION['error'])) {  ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_SESSION['error']; ?>
+                </div>
 
-            <label for="courset" class="">Course Title</label>
-            <input type="text" name="email" id="courset" class="form-control" style="width:50%;" required> <br>
-            <label for="coursecode" class="">Course Code</label>
-            <input type="text" name="coud" id="coursecode" class="form-control" style="width:50%;" required> <br>
-            <label for="coursedatt" class="">Course Date/Time</label>
-            <input type="text" name="coudt" id="coursedatt" class="form-control" style="width:50%;" required> <br>
-            <label for="maxstud" class="">Maximum number of student</label>
-            <input type="text" name="maxst" id="maxstud" class="form-control" style="width:50%;" required> <br>
-            <label for="courseven" class="">Venue</label>
-            <input type="text" name="ven" id="courseven" class="form-control" style="width:50%;" required> <br>
+                <?php unset($_SESSION['error']); ?>
 
-            <button type="submit" style="background-color:  #032658; color: #fff;">Submit</button>
-        </div>
+            <?php } ?>
 
-        <!-- <div class="tab-content" id="v-pills-tabContent">
+            <?php if (isset($_SESSION['success'])) {  ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $_SESSION['success']; ?>
+                </div>
+
+                <?php unset($_SESSION['success']); ?>
+
+            <?php } ?>
+            <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
+                <div class="course_reg pt-3 pl-2">Add Courses</div>
+                <hr>
+
+                <form action="../post/postcourses.php" method="post">
+
+                    <label for="courset" class="">Course Title</label>
+                    <input type="text" name="title" id="courset" class="form-control" style="width:50%;" required> <br>
+                    <label for="coursecode" class="">Course Code</label>
+                    <input type="text" name="code" id="coursecode" class="form-control" style="width:50%;" required> <br>
+                    <label for="coursedatt" class="">Course Date/Time</label>
+                    <input type="text" name="date" id="coursedatt" class="form-control" style="width:50%;" required> <br>
+                    <label for="maxstud" class="">Maximum number of student</label>
+                    <input type="text" name="max" id="maxstud" class="form-control" style="width:50%;" required> <br>
+                    <label for="courseven" class="">Venue</label>
+
+                    <select name="ven" class="form-control" id="" style="width:50%;">
+
+                        <option selected value="1">Choose a venue</option>
+
+                        <?php foreach ($init->get() as $key => $value) { ?>
+                            <option value="<?php echo $value['venueId'] ?>"><?php echo  $value['venue'] ?></option>
+                        <?php } ?>
+                    </select>
+                    <br>
+
+                    <input type="submit" value="submit" name="submit" style="background-color:  #032658; color: #fff;" />
+                </form>
+            </div>
+
+            <!-- <div class="tab-content" id="v-pills-tabContent">
             
             <div class="tab-pane fade active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                 <div class="alert alert-secondary" role="alert">
@@ -272,5 +302,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>
-
-

@@ -3,7 +3,7 @@
     <header class="admin__header">
         <h1 class="logo dashcol">MyTutorial Admin</h1>
         <div class="toolbar">
-            <a href="login" class="logout" style="text-decoration:none;">
+            <a href="logout" class="logout" style="text-decoration:none;">
                 Log Out
             </a>
         </div>
@@ -32,18 +32,37 @@
             <div class="alert alert-secondary" role="alert">
                 Welcome Admin,
             </div>
+            <?php if (isset($_SESSION['error'])) {  ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_SESSION['error']; ?>
+                </div>
+
+                <?php unset($_SESSION['error']); ?>
+
+            <?php } ?>
+
+            <?php if (isset($_SESSION['success'])) {  ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $_SESSION['success']; ?>
+                </div>
+
+                <?php unset($_SESSION['success']); ?>
+
+            <?php } ?>
             <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
                 <div class="course_reg pt-3 pl-2">Add Admin</div>
                 <hr>
+                <form action="post/postadmin.php" method="post">
+                    <label for="Inputusername" class="">Name:</label>
+                    <input type="text" name="name" id="Inputusername" class="form-control" required style="width:50%;"> <br>
+                    <label for="inputEmail" class="">Email:</label>
+                    <input type="email" name="email" id="inputEmail" class="form-control" required style="width:50%;"> <br>
+                    <label for="inputPassword" class="">Password:</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control mb-3" style="width:50%;" required>
 
-                <label for="Inputusername" class="">Name:</label>
-                <input type="text" name="name" id="Inputusername" class="form-control" required style="width:50%;"> <br>
-                <label for="inputEmail" class="">Email:</label>
-                <input type="email" name="email" id="inputEmail" class="form-control" required style="width:50%;"> <br>
-                <label for="inputPassword" class="">Password:</label>
-                <input type="password" name="password" id="inputPassword" class="form-control mb-3" style="width:50%;" required>
 
-                <button type="submit" style="background-color:  #032658; color: #fff;">Submit</button>
+                    <input type="submit" name="submit" style="background-color:  #032658; color: #fff;" value="Submit" />
+                </form>
             </div>
         </div>
     </main>
@@ -54,6 +73,3 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>
-
-
-

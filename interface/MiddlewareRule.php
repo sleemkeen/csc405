@@ -1,5 +1,6 @@
 <?php
 interface MiddlewareRule
 {
-    public function handle();
+    public function userhandle();
+    public function adminhandle();
 }

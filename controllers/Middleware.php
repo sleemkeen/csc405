@@ -15,7 +15,7 @@ class Middleware implements MiddlewareRule
     }
 
 
-    public function handle()
+    public function userhandle()
     {
         $protectedRoute = $this->protected;
         $req = $this->req;
@@ -24,6 +24,22 @@ class Middleware implements MiddlewareRule
 
         for ($i = 0; $i < count($protectedRoute); $i++) {
             if ($protectedRoute[$i] == $req && !isset($_SESSION['user_id'])) {
+                header('Location: /');
+                echo '1';
+            }
+        }
+    }
+
+
+    public function adminhandle()
+    {
+        $protectedRoute = $this->protected;
+        $req = $this->req;
+
+        // $_SESSION['user_id'] = 4;
+
+        for ($i = 0; $i < count($protectedRoute); $i++) {
+            if ($protectedRoute[$i] == $req && !isset($_SESSION['admin_id'])) {
                 header('Location: /');
                 echo '1';
             }

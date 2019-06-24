@@ -9,8 +9,6 @@ class Conn
     private $pass = 'PASSWORD';
     public function connect()
     {
-
-
         try {
 
             $conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->pass);

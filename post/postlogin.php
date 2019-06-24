@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
             header('Location: /portal');
         } else {
 
-            $_SESSION['user_id'] = $nowlogin['id'];
+            $_SESSION['admin_id'] = $nowlogin['id'];
             $_SESSION['logged_in'] = time();
             header('Location: /adminhome');
         }
