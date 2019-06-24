@@ -3,7 +3,7 @@
     <header class="admin__header">
         <h1 class="logo dashcol">Dashboard</h1>
         <div class="toolbar">
-            <a href="login" class="logout">
+            <a href="login" class="logout" style="text-decoration:none;">
                 Log Out
             </a>
         </div>
@@ -35,7 +35,7 @@
                     A simple secondary alert—check it out!
                 </div>
                 <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
-                    <div class="course_reg pt-3 pl-2">Timetable</div>
+                    <div class="course_reg pt-3 pl-2">Course Registration</div>
                     <hr>
 
                     <table class="table table-striped">
@@ -352,9 +352,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </main>
 </div>
 
