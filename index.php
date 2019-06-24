@@ -11,6 +11,13 @@ require_once('models/Users.php');
 $request = $_SERVER['REQUEST_URI'];
 
 $router = new Router($request);
+//Register Middleware
+$regmiddleware = new Middleware($request, [
+    '/portal', '/adminhome', '/admincourses', '/adminuser', '/adminvenue'
+]);
+
+
+$regmiddleware->handle();
 
 $router->get('/', 'views/home');
 $router->get('/login', 'views/login');
@@ -25,17 +32,3 @@ $router->get('/admincourses', 'views/admin/admincourses');
 $router->get('/adminhome', 'views/admin/adminhome');
 $router->get('/adminuser', 'views/admin/adminuser');
 $router->get('/adminvenue', 'views/admin/adminvenue');
-
-//api
-
-
-
-
-//Register Middleware
-$regmiddleware = new Middleware($request, [
-    '/portal',
-]);
-
-
-
-print_r($regmiddleware->handle());

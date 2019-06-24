@@ -3,10 +3,10 @@
 class Conn
 {
 
-    private $dbname = 'school';
+    private $dbname = 'csc';
     private $host = 'localhost';
     private $username = 'root';
-    private $pass = '';
+    private $pass = 'PASSWORD';
     public function connect()
     {
 
@@ -14,6 +14,7 @@ class Conn
         try {
 
             $conn = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->pass);
+
             return $conn;
         } catch (PDOexception $e) {
 

@@ -31,6 +31,8 @@ if (isset($_POST['submit'])) {
         ], [
             $name, $email, $password, $who
         ], 'users');
+        // echo $register;
+
         if ($register) {
 
             $_SESSION['success'] = "User successfully created.";

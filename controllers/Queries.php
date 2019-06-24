@@ -91,6 +91,7 @@ class Queries extends Conn
     }
 }
 
+
 // $tt = new Queries();
 
 
@@ -107,7 +108,7 @@ class Queries extends Conn
 // print_r($tt->insert([
 //     'name', 'email', 'password', 'role'
 // ], [
-//     'shola', 'abcs@gmail.com', 'jjjss', 'user'
+//     'shola', 'abllcs@gmail.com', 'jjjss', 'user'
 // ], 'users'));
 
 

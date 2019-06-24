@@ -11,22 +11,23 @@ if (isset($_POST['submit'])) {
     $getauth = new Auth($email, $password);
     $nowlogin = $getauth->authlogin();
 
+
     if ($nowlogin) {
 
         if ($who == 'user') {
 
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_id'] = $nowlogin['id'];
             $_SESSION['logged_in'] = time();
             header('Location: /portal');
         } else {
 
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_id'] = $nowlogin['id'];
             $_SESSION['logged_in'] = time();
             header('Location: /adminhome');
         }
     } else {
 
-            $_SESSION['error'] = "Incorrect email and password";
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
+        $_SESSION['error'] = "Incorrect email and password";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

@@ -19,12 +19,13 @@ class Middleware implements MiddlewareRule
     {
         $protectedRoute = $this->protected;
         $req = $this->req;
-        $getsession = @$_SESSION['user_id'];
 
+        // $_SESSION['user_id'] = 4;
 
         for ($i = 0; $i < count($protectedRoute); $i++) {
-            if ($protectedRoute[$i] == $req && is_null($getsession)) {
+            if ($protectedRoute[$i] == $req && !isset($_SESSION['user_id'])) {
                 header('Location: /');
+                echo '1';
             }
         }
     }
