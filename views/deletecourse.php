@@ -1,15 +1,26 @@
 <?php
 require_once('../controllers/Conn.php');
 require_once('../controllers/Queries.php');
+require_once('../models/Config.php');
 
 
- $getlinkid = $_GET['linkId'];
+$getlinkid = $_GET['linkId'];
 
- $sql = 'DELETE FROM links WHERE linkId ='.$getlinkid;
+$sql = 'DELETE FROM links WHERE linkId =' . $getlinkid;
 
- $action = new Queries();
+$action = new Queries();
 
-$delete =  $action->actionQuery($sql);
+$validate = new Config();
+$getdate = strtotime($validate->showById(1)['closeTime']);
+$presentdate = time();
 
-$_SESSION['error'] = "Delete successfully";
-header('Location: /portal');
+if ($getdate > $presentdate) {
+
+    $delete =  $action->actionQuery($sql);
+
+    $_SESSION['success'] = "Delete successfully";
+    header('Location: /portal');
+} else {
+
+    echo 'Editing of course closed';
+}
