@@ -61,6 +61,19 @@ class Queries extends Conn
         return $result;
     }
 
+
+    public function actionQuery($sql)
+    {
+
+        $pdoStatement = $this->connect()->prepare($sql);
+        $status = $pdoStatement->execute();
+        if($status){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function insert($attrArray = [], $valueArray = [], $table)
     {
 

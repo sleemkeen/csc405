@@ -33,6 +33,7 @@
             <div class="alert alert-secondary" role="alert">
                 Welcome Admin,
             </div>
+
             <?php if (isset($_SESSION['error'])) {  ?>
                 <div class="alert alert-danger" role="alert">
                     <?php echo $_SESSION['error']; ?>
@@ -51,8 +52,12 @@
 
             <?php } ?>
             <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
+
                 <div class="course_reg pt-3 pl-2">Add Courses</div>
                 <hr>
+
+
+
 
                 <form action="../post/postcourses.php" method="post">
 
@@ -78,6 +83,9 @@
 
                     <input type="submit" value="submit" name="submit" style="background-color:  #032658; color: #fff;" />
                 </form>
+
+
+
             </div>
 
             <!-- <div class="tab-content" id="v-pills-tabContent">

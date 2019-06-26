@@ -1,5 +1,5 @@
 <?php
-
+require_once('Links.php');
 class Classes extends Queries
 {
 
@@ -22,6 +22,18 @@ class Classes extends Queries
     {
         $classes = $this->findBy('classes', 'classId', $id);
         return $classes;
+    }
+
+    public function isRegistered($id)
+    {
+        $action = new Links();
+        $checkifregistered = $action->showByUserId($id);
+
+        if (empty($checkifregistered)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function create($classdate, $classperiod, $classmax, $classvenue, $classcode, $classtitle)
