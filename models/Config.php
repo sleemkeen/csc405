@@ -13,7 +13,7 @@ class Config extends Queries
 
     public function showById($id)
     {
-        $config = $this->findBy('rules', 'id', $id);
+        $config = $this->findBy('rules', 'rulesId', $id);
         return $config;
     }
 

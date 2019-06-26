@@ -2,6 +2,7 @@
 
 <?php $init  =  new Classes(); ?>
 <?php $initlinks  =  new Links(); ?>
+<?php $closing  =  new Config(); ?>
 <div class="admin">
     <header class="admin__header">
         <h1 class="logo dashcol">Dashboard</h1>
@@ -35,7 +36,8 @@
 
                 <!-- Classes -->
                 <div class="alert alert-danger" role="alert">
-                    Course Registration ends July 4th 2019
+                    Course Registration ends <?php $date = new DateTime($closing->showById(1)['closeTime']);
+                                                echo $date->format('g:ia \o\n l jS F Y'); ?>
                 </div>
                 <?php if (isset($_SESSION['error'])) {  ?>
                     <div class="alert alert-danger" role="alert">

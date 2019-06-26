@@ -11,6 +11,7 @@ require_once('models/Venues.php');
 
 require_once('models/Classes.php');
 require_once('models/Links.php');
+require_once('models/Config.php');
 
 $request = $_SERVER['REQUEST_URI'];
 
