@@ -51,12 +51,12 @@
 
             <?php } ?>
             <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
-                <form action="post/postvenue.php" method="post">
+                <form action="post/postconfig.php" method="post">
 
                     <div class="course_reg pt-3 pl-2">Add Config</div>
                     <hr>
-                    <label for="coursevenue" class="">Venue</label>
-                    <input type="text" name="ven" id="coursevenue" class="form-control" style="width:50%;" required>
+                    <label for="coursevenue" class="">Course Reg Closing Date</label>
+                    <input type="datetime-local" name="config" id="coursevenue" class="form-control" style="width:50%;" required>
                     <br>
 
                     <input type="submit" name="submit" style="background-color:  #032658; color: #fff;" value="Submit" />

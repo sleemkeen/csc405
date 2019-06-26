@@ -67,9 +67,9 @@ class Queries extends Conn
 
         $pdoStatement = $this->connect()->prepare($sql);
         $status = $pdoStatement->execute();
-        if($status){
+        if ($status) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

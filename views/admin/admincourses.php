@@ -69,7 +69,7 @@
                     <label for="coursecode" class="">Course Code</label>
                     <input type="text" name="code" id="coursecode" class="form-control" style="width:50%;" required> <br>
                     <label for="coursedatt" class="">Course Date/Time</label>
-                    <input type="text" name="date" id="coursedatt" class="form-control" style="width:50%;" required> <br>
+                    <input type="datetime-local" name="date" id="coursedatt" class="form-control" style="width:50%;" required> <br>
                     <label for="maxstud" class="">Maximum number of student</label>
                     <input type="text" name="max" id="maxstud" class="form-control" style="width:50%;" required> <br>
                     <label for="courseven" class="">Venue</label>
