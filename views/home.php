@@ -37,7 +37,7 @@
                   <div class="card-body text-left">
                     <h5 class="card-title"><?php echo $value['classTitle'] ?></h5>
                     <p class="card-text"><?php echo $value['classCode'] ?></p>
-                    <a href="#" class="btn btn-primary">Start Now</a>
+                    <!-- <a href="#" class="btn btn-primary">Start Now</a> -->
                   </div>
                 </div>
               </div>
