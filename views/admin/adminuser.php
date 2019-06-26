@@ -8,7 +8,7 @@
             </a>
         </div>
     </header>
-    <nav class="admin__nav navcol">
+    <nav class="admin__nav navcol" style="min-height:2000px">
         <ul class="menu">
             <li class="menu__item">
                 <a class="menu__link" href="adminhome">Dashboard</a>
@@ -21,6 +21,9 @@
             </li>
             <li class="menu__item">
                 <a class="menu__link" href="adminuser">Add User</a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link" href="adminconfig">Add Config</a>
             </li>
         </ul>
     </nav>

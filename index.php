@@ -21,7 +21,7 @@ $regmiddleware = new Middleware($request, [
 ]);
 
 $adminmiddleware = new Middleware($request, [
-    '/adminhome', '/admincourses', '/adminuser', '/adminvenue'
+    '/adminhome', '/admincourses', '/adminuser', '/adminvenue', '/adminconfig'
 ]);
 
 
@@ -41,7 +41,7 @@ $router->get('/admincourses', 'views/admin/admincourses');
 $router->get('/adminhome', 'views/admin/adminhome');
 $router->get('/adminuser', 'views/admin/adminuser');
 $router->get('/adminvenue', 'views/admin/adminvenue');
-
+$router->get('/adminconfig', 'views/admin/adminconfig');
 $router->get('/logout', 'views/logout');
 
 

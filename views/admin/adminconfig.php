@@ -1,5 +1,4 @@
 <?php include('headadmin.php'); ?>
-<?php $init  =  new Venues(); ?>
 <div class="admin">
     <header class="admin__header">
         <h1 class="logo dashcol">MyTutorial Admin</h1>
@@ -31,12 +30,9 @@
     <main class="admin__main">
 
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-
-            <!-- Classes -->
             <div class="alert alert-secondary" role="alert">
                 Welcome Admin,
             </div>
-
             <?php if (isset($_SESSION['error'])) {  ?>
                 <div class="alert alert-danger" role="alert">
                     <?php echo $_SESSION['error']; ?>
@@ -55,40 +51,16 @@
 
             <?php } ?>
             <div class="bordered-around pl-3 pt-3 pr-3 pb-3">
+                <form action="post/postvenue.php" method="post">
 
-                <div class="course_reg pt-3 pl-2">Add Courses</div>
-                <hr>
-
-
-
-
-                <form action="../post/postcourses.php" method="post">
-
-                    <label for="courset" class="">Course Title</label>
-                    <input type="text" name="title" id="courset" class="form-control" style="width:50%;" required> <br>
-                    <label for="coursecode" class="">Course Code</label>
-                    <input type="text" name="code" id="coursecode" class="form-control" style="width:50%;" required> <br>
-                    <label for="coursedatt" class="">Course Date/Time</label>
-                    <input type="text" name="date" id="coursedatt" class="form-control" style="width:50%;" required> <br>
-                    <label for="maxstud" class="">Maximum number of student</label>
-                    <input type="text" name="max" id="maxstud" class="form-control" style="width:50%;" required> <br>
-                    <label for="courseven" class="">Venue</label>
-
-                    <select name="ven" class="form-control" id="" style="width:50%;">
-
-                        <option selected value="1">Choose a venue</option>
-
-                        <?php foreach ($init->get() as $key => $value) { ?>
-                            <option value="<?php echo $value['venueId'] ?>"><?php echo  $value['venue'] ?></option>
-                        <?php } ?>
-                    </select>
+                    <div class="course_reg pt-3 pl-2">Add Config</div>
+                    <hr>
+                    <label for="coursevenue" class="">Venue</label>
+                    <input type="text" name="ven" id="coursevenue" class="form-control" style="width:50%;" required>
                     <br>
 
-                    <input type="submit" value="submit" name="submit" style="background-color:  #032658; color: #fff;" />
+                    <input type="submit" name="submit" style="background-color:  #032658; color: #fff;" value="Submit" />
                 </form>
-
-
-
             </div>
 
             <!-- <div class="tab-content" id="v-pills-tabContent">
